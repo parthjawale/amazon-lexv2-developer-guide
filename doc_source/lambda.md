@@ -312,7 +312,7 @@ Note the following additional information about the response fields:
 + **sessionState** – Required\. The current state of the conversation with the user\. The actual contents of the structure depends on the type of dialog action\.
   + **dialogAction** – Determines the type of action that Amazon Lex V2 should take in response to the Lambda function\. The `type` field is always required, the `slotToElicit` field is only required when `dialogAction.type` is `ElicitSlot`\.
   + **intent** – The name of the intent that Amazon Lex V2 should use\. Not required when `dialogAction.type` is `Delegate` or `ElicitIntent`\.
-  + **state** – Required\. The state can only be `ReadyForFulfillment` if `delegateAction.type` is `Delegate`\.
+  + **state** – Required\. The state can only be `ReadyForFulfillment` if `dialogAction.type` is `Delegate`\.
 + **messages** – Required if `dialogAction.type` is `ElicitIntent`\. One or more messages that Amazon Lex V2 shows to the customer to perform the next turn of the conversation\. If you don't supply messages, Amazon Lex V2 uses the appropriate message defined when the bot was created\. For more information, see the [Message](API_runtime_Message.md) data type\.
   + **contentType** – The type of message to use\.
   + **content** – If the message type is `PlainText`, `CustomPayload`, or `SSML`, the `content` field contains the message to send to the user\.
